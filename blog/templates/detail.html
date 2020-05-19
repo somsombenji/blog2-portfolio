@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+             @font-face { font-family: 'MapoPeacefull';
+                        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+                        font-weight: normal;
+                        font-style: normal;
+                        }
+            body {
+                background-color: rgba(250,236,197,0.7);
+                font-family: "MapoPeacefull";
+            }
+            .header {
+                width:99%;
+                height: 100px;
+                border-bottom: 9px solid #C4B5DB;
+                border-top: 9px solid #C4B5DB;
+                font-size: 50px;
+                font-weight: bold;
+                margin-left: 7px;
+                padding-left: 10px;
+            }
+            nav {
+                width: 20%;
+                height: 500px;
+                border: 5px solid #FFD3B0;
+                float: left;
+                margin-top: 10px;
+                margin-left: 10px;
+                background-color: rgba(246,246,246,0.5);
+                padding: 10px;
+                border-radius: 10px;
+            }
+            
+            section {
+                width: 79%;
+                height: 500px;
+                float: right;
+            }
+            
+            .post {
+                width: 99%;
+                height:100%;
+                overflow: auto;
+                border: 2px solid gray;
+                border-radius: 10px;
+                margin-top: 10px;
+                background-color: rgba(246,246,246,0.5);
+                padding: 20px;
+            }
+            .edit {
+                position: absolute;
+                left: 200px;
+                top: 550px;
+            }
+            
+            .pub_date {
+                font-size: 15px;
+                color: gray;
+            }
+            .content {
+                font-size: 20px;
+            }
+            #home {
+                position: relative;
+                left: 1100px;
+                top: 10px;
+            }
+    
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            My Blog
+        </div>
+        <nav>
+            <h3>블로그 소개</h3><br>
+            안녕하세요 이것저것 쓰는 블로그입니다.<br>
+            <div class="edit">
+                 <svg class="bi bi-pencil-square" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z" clip-rule="evenodd"/>
+              </svg>
+              <a href="{%url 'new'%}" type="button" class="btn btn-outline-secondary">글쓰기</a>
+            </div>
+        </nav>
+        <section>
+            <div class="post">
+                <h2>제목: {{detail.title}}</h2>
+                <p class="pub_date">{{detail.pub_date}}</p><br>
+                <p class="content">내용: {{detail.body}}</p>
+             </div>
+             <a href="{%url 'home'%}" type="button" class="btn btn-outline-secondary" id="home">Home</a>
+        </section>
+    </body>
+</html>

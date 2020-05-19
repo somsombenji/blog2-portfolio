@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>포트폴리오</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+            @font-face { font-family: 'KOMACON';
+                         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/KOMACON.woff') format('woff');
+                         font-weight: normal;
+                         font-style: normal; 
+                    }
+            body {
+                background-color:rgba(228,247,186,0.5);
+                font-family: "KOMACON";
+            }
+            .header {
+                width: 100%;
+                height: 100px;
+                font-size: 60px;
+                font-weight: bold;
+                color:#0B7903;
+                padding-left: 20px;
+            }
+            nav {
+                width: 20%;
+                height: 200px;
+                border: 7px solid #FFE08C;
+                float: left;
+                margin-top: 10px;
+                margin-left: 10px;
+                background-color: rgba(246,246,246,0.6);
+                padding: 10px;
+                border-radius: 10px;
+                position: fixed;
+            }
+            .photo {
+                width: 77%;
+                height: 500px;
+                float: right;
+                border: 7px solid #81BA7B;
+                padding: 10px;
+                margin-bottom: 10px;
+                overflow: auto;
+                
+            }
+            .photo_title {
+                width: 95%;
+                height: 45px;
+                margin-bottom: 20px;
+                font-size: 25px;
+                padding-top: 7px;
+                padding-left: 7px;
+                
+            }
+            .detail {
+                
+                float: right;
+                border: 5px solid #FAF4C0;
+                width: 31%;
+                height: 370px;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: rgba(246,246,246,0.6);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            Portfolio
+        </div>
+        <nav>
+            20200954 컴퓨터학과 김세정
+            포트폴리오입니다
+            <br><br>
+            홈으로 돌아가고 싶다면
+            <a href="{%url 'home'%}" type="button" class="btn btn-outline-secondary">Home</a>
+        </nav>
+        <div class="photo">
+            <div class="photo_title">
+                멋사 홍보페이지 만들기
+            </div>
+                <img src="{% static 'page.jpg'%}" height=400/>
+                <div class="detail">
+                    설명 : <br>
+                    첫번째 과제로 만든 멋사 소개 홈페이지 입니다.<br>
+                   
+                </div>
+        </div>
+        <div class="photo">
+            <div class="photo_title">
+                Word counter
+            </div>
+                <img src="{% static 'wordcounter.png'%}" height=400/>
+                <div class="detail">
+                    설명 : <br>
+                    두번째 과제로 만든 Wordcounter 페이지입니다.<br>
+                    
+                </div>
+        </div>
+        <div class="photo">
+            <div class="photo_title">
+                blog 1
+            </div>
+                <img src="{% static 'blog.png'%}" height=400/>
+                <div class="detail">
+                    설명 : <br>
+                    두번째 과제로 만든 블로그 페이지입니다.<br>
+                </div>
+        </div>
+    </body>
+</html>
